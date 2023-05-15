@@ -1,0 +1,24 @@
+- class_name: 网站
+  class_desc: 值得推荐的网站
+  link_list:
+    - name: 动漫图片和壁纸
+      link: https://anime-pictures.net/?lang=zh_CN
+      avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
+      descr: 图片网站
+    - name: Wallhaven
+      link: https://wallhaven.cc/
+      avatar: https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png
+      descr: 4k图片网站
+    - name: WALLPAPER ABYSS
+      link: https://wall.alphacoders.com/
+      avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
+      descr: WALLPAPER ABYSS
+    - name: 极简壁纸
+      link: https://bz.zzzmh.cn/
+      avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
+      descr: 极简壁纸
+    - name: Wallroom
+      link: https://wallroom.io/
+      avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
+      descr: Wallroom
+

@@ -1,0 +1,202 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>jenkins安装 | ShullyBlog</title><meta name="keywords" content="jenkins"><meta name="author" content="shully"><meta name="copyright" content="shully"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="jenkins安装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jenkins安装">
+<meta property="og:url" content="http://example.com/2022/10/14/jenkins%E5%AE%89%E8%A3%85/index.html">
+<meta property="og:site_name" content="ShullyBlog">
+<meta property="og:description" content="jenkins安装">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg">
+<meta property="article:published_time" content="2022-10-14T06:21:11.000Z">
+<meta property="article:modified_time" content="2022-10-16T06:16:50.196Z">
+<meta property="article:author" content="shully">
+<meta property="article:tag" content="jenkins">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg"><link rel="shortcut icon" href="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F505112fe57b746e8a593a0f375e0ea01.jpg"><link rel="canonical" href="http://example.com/2022/10/14/jenkins%E5%AE%89%E8%A3%85/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'jenkins安装',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-16 14:16:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ShullyBlog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">jenkins安装</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-14T06:21:11.000Z" title="发表于 2022-10-14 14:21:11">2022-10-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-16T06:16:50.196Z" title="更新于 2022-10-16 14:16:50">2022-10-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AE%89%E8%A3%85/">安装</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="jenkins安装"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="jenkins安装"><a href="#jenkins安装" class="headerlink" title="jenkins安装"></a>jenkins安装</h1><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>环境准备</th>
+<th>版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>jdk</td>
+<td>Jdk11</td>
+</tr>
+<tr>
+<td>2</td>
+<td>jenkins</td>
+<td>2.346.1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Ubantu</td>
+<td>20.04桌面版</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注意：jenkins安装时，jdk版本要与jenkins的版本匹配</p>
+</blockquote>
+<p>jdk和jenkins对应的版本如下图所示：</p>
+<p><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora/image-20221014102439062.png" alt="image-20221014102439062"></p>
+<p>在安装jenkins时的过程中得注意，在最新版本，也就是<strong>2.361.1</strong>这个版本中，jenkins的默认配置是jenkins用户（jenkins在安装的时候会自动创建一个名叫jenkins的用户），<em><strong>这会导致在执行shell脚本命令，或者安装某些插件时，没有权限</strong></em>，jenkins的配置文件所在地址&#x2F;etc&#x2F;default&#x2F;jenkins，</p>
+<ul>
+<li><p>Jenkins2.361.1的版本（截止2022.10.14最新的版本）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JENKINS_USER=$NAME</span><br><span class="line">JENKINS_GROUP=$NAME</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Jenkins2.346.1的版本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JENKINS_USER=root</span><br><span class="line">JENKINS_GROUP=root</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.346.1具体的配置信息如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"># defaults for Jenkins automation server</span><br><span class="line"></span><br><span class="line"># pulled in from the init script; makes things easier.</span><br><span class="line">NAME=jenkins</span><br><span class="line"></span><br><span class="line"># arguments to pass to java</span><br><span class="line"></span><br><span class="line"># Allow graphs etc. to work even when an X server is present</span><br><span class="line">JAVA_ARGS=&quot;-Djava.awt.headless=true&quot;</span><br><span class="line"></span><br><span class="line">#JAVA_ARGS=&quot;-Xmx256m&quot;</span><br><span class="line"></span><br><span class="line"># make jenkins listen on IPv4 address</span><br><span class="line">#JAVA_ARGS=&quot;-Djava.net.preferIPv4Stack=true&quot;</span><br><span class="line"></span><br><span class="line">PIDFILE=/var/run/$NAME/$NAME.pid</span><br><span class="line"></span><br><span class="line"># user and group to be invoked as (default to jenkins)</span><br><span class="line">JENKINS_USER=root</span><br><span class="line">JENKINS_GROUP=root</span><br><span class="line"></span><br><span class="line"># location of the jenkins war file</span><br><span class="line">JENKINS_WAR=/usr/share/java/$NAME.war</span><br><span class="line"></span><br><span class="line"># jenkins home location</span><br><span class="line">JENKINS_HOME=/var/lib/$NAME</span><br><span class="line"></span><br><span class="line"># set this to false if you don&#x27;t want Jenkins to run by itself</span><br><span class="line"># in this set up, you are expected to provide a servlet container</span><br><span class="line"># to host jenkins.</span><br><span class="line">RUN_STANDALONE=true</span><br><span class="line"></span><br><span class="line"># log location.  this may be a syslog facility.priority</span><br><span class="line">JENKINS_LOG=/var/log/$NAME/$NAME.log</span><br><span class="line">#JENKINS_LOG=daemon.info</span><br><span class="line"></span><br><span class="line"># Whether to enable web access logging or not.</span><br><span class="line"># Set to &quot;yes&quot; to enable logging to /var/log/$NAME/access_log</span><br><span class="line">JENKINS_ENABLE_ACCESS_LOG=&quot;yes&quot;</span><br><span class="line"></span><br><span class="line"># OS LIMITS SETUP</span><br><span class="line">#   comment this out to observe /etc/security/limits.conf</span><br><span class="line">#   this is on by default because http://github.com/jenkinsci/jenkins/commit/2fb288474e980d0e7ff9c4a3b768874835a3e92e</span><br><span class="line">#   reported that Ubuntu&#x27;s PAM configuration doesn&#x27;t include pam_limits.so, and as a result the # of file</span><br><span class="line">#   descriptors are forced to 1024 regardless of /etc/security/limits.conf</span><br><span class="line">MAXOPENFILES=8192</span><br><span class="line"></span><br><span class="line"># set the umask to control permission bits of files that Jenkins creates.</span><br><span class="line">#   027 makes files read-only for group and inaccessible for others, which some security sensitive users</span><br><span class="line">#   might consider benefitial, especially if Jenkins runs in a box that&#x27;s used for multiple purposes.</span><br><span class="line">#   Beware that 027 permission would interfere with sudo scripts that run on the master (JENKINS-25065.)</span><br><span class="line">#</span><br><span class="line">#   Note also that the particularly sensitive part of $JENKINS_HOME (such as credentials) are always</span><br><span class="line">#   written without &#x27;others&#x27; access. So the umask values only affect job configuration, build records,</span><br><span class="line">#   that sort of things.</span><br><span class="line">#</span><br><span class="line">#   If commented out, the value from the OS is inherited,  which is normally 022 (as of Ubuntu 12.04,</span><br><span class="line">#   by default umask comes from pam_umask(8) and /etc/login.defs</span><br><span class="line"></span><br><span class="line"># UMASK=027</span><br><span class="line"></span><br><span class="line"># port for HTTP connector (default 8080; disable with -1)</span><br><span class="line">HTTP_PORT=8080</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># servlet context, important if you want to use apache proxying</span><br><span class="line">PREFIX=/$NAME</span><br><span class="line"></span><br><span class="line"># arguments to pass to jenkins.</span><br><span class="line"># full list available from java -jar jenkins.war --help</span><br><span class="line"># --javaHome=$JAVA_HOME</span><br><span class="line"># --httpListenAddress=$HTTP_HOST (default 0.0.0.0)</span><br><span class="line"># --httpPort=$HTTP_PORT (default 8080; disable with -1)</span><br><span class="line"># --httpsPort=$HTTP_PORT</span><br><span class="line"># --argumentsRealm.passwd.$ADMIN_USER=[password]</span><br><span class="line"># --argumentsRealm.roles.$ADMIN_USER=admin</span><br><span class="line"># --webroot=~/.jenkins/war</span><br><span class="line"># --prefix=$PREFIX</span><br><span class="line"></span><br><span class="line">JENKINS_ARGS=&quot;--webroot=/var/cache/$NAME/war --httpPort=$HTTP_PORT&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>安装命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \</span><br><span class="line">    /usr/share/keyrings/jenkins-keyring.asc &gt; /dev/null</span><br><span class="line">    </span><br><span class="line">echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \</span><br><span class="line">    https://pkg.jenkins.io/debian-stable binary/ | sudo tee \</span><br><span class="line">    /etc/apt/sources.list.d/jenkins.list &gt; /dev/null</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install fontconfig openjdk-11-jre</span><br><span class="line">sudo apt-get install jenkins==2.346.1</span><br></pre></td></tr></table></figure>
+
+<p>启动jenkins</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start jenkins</span><br></pre></td></tr></table></figure>
+
+<p>查看jenkins状态</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status jenkins</span><br></pre></td></tr></table></figure>
+
+<p>关闭jenkins</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl stop jenkins</span><br></pre></td></tr></table></figure>
+
+<p>重启jenkins</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart jenkins</span><br></pre></td></tr></table></figure>
+
+<p>jenkins的访问网址，jenkins默认的端口是8080</p>
+<p><a target="_blank" rel="noopener" href="http://127.0.0.1:8080/">http://127.0.0.1:8080</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">shully</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/10/14/jenkins%E5%AE%89%E8%A3%85/">http://example.com/2022/10/14/jenkins%E5%AE%89%E8%A3%85/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">ShullyBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/jenkins/">jenkins</a></div><div class="post_share"><div class="social-share" data-image="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/10/14/Harbor%E5%AE%89%E8%A3%85/"><img class="next-cover" src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Harbor安装</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">shully</div><div class="author-info__description">好好学习，天天向上</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Shunlly" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/330289953@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#jenkins%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">jenkins安装</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/jenkins%E5%AE%89%E8%A3%85/" title="jenkins安装"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jenkins安装"/></a><div class="content"><a class="title" href="/2022/10/14/jenkins%E5%AE%89%E8%A3%85/" title="jenkins安装">jenkins安装</a><time datetime="2022-10-14T06:21:11.000Z" title="发表于 2022-10-14 14:21:11">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/Harbor%E5%AE%89%E8%A3%85/" title="Harbor安装"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Harbor安装"/></a><div class="content"><a class="title" href="/2022/10/14/Harbor%E5%AE%89%E8%A3%85/" title="Harbor安装">Harbor安装</a><time datetime="2022-10-14T06:11:01.000Z" title="发表于 2022-10-14 14:11:01">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/Docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E5%AE%89%E8%A3%85/" title="Docker私有仓库安装"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Docker私有仓库安装"/></a><div class="content"><a class="title" href="/2022/10/14/Docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E5%AE%89%E8%A3%85/" title="Docker私有仓库安装">Docker私有仓库安装</a><time datetime="2022-10-14T05:21:01.000Z" title="发表于 2022-10-14 13:21:01">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/19/eml%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/" title="eml文件解析"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="eml文件解析"/></a><div class="content"><a class="title" href="/2022/07/19/eml%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/" title="eml文件解析">eml文件解析</a><time datetime="2022-07-19T01:22:01.000Z" title="发表于 2022-07-19 09:22:01">2022-07-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/20/Linux%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/" title="Linux命令记录"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux命令记录"/></a><div class="content"><a class="title" href="/2021/11/20/Linux%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/" title="Linux命令记录">Linux命令记录</a><time datetime="2021-11-20T04:31:01.000Z" title="发表于 2021-11-20 12:31:01">2021-11-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By shully</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

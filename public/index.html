@@ -1,0 +1,443 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>ShullyBlog</title><meta name="author" content="shully"><meta name="copyright" content="shully"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="好好学习，天天向上">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ShullyBlog">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="ShullyBlog">
+<meta property="og:description" content="好好学习，天天向上">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg">
+<meta property="article:author" content="shully">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg"><link rel="shortcut icon" href="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F505112fe57b746e8a593a0f375e0ea01.jpg"><link rel="canonical" href="http://example.com/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ShullyBlog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-04-04 10:08:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F505112fe57b746e8a593a0f375e0ea01.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ShullyBlog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">ShullyBlog</h1><div id="site_social_icons"><a class="social-icon" href="https://github.com/Shunlly" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/330289953@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/10/14/jenkins%E5%AE%89%E8%A3%85/" title="jenkins安装"><img class="post_bg" src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jenkins安装"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/14/jenkins%E5%AE%89%E8%A3%85/" title="jenkins安装">jenkins安装</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-14T06:21:11.000Z" title="发表于 2022-10-14 14:21:11">2022-10-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%89%E8%A3%85/">安装</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/jenkins/">jenkins</a></span></div><div class="content">jenkins安装
+
+
+序号
+环境准备
+版本
+
+
+
+1
+jdk
+Jdk11
+
+
+2
+jenkins
+2.346.1
+
+
+3
+Ubantu
+20.04桌面版
+
+
+
+注意：jenkins安装时，jdk版本要与jenkins的版本匹配
+
+jdk和jenkins对应的版本如下图所示：
+
+在安装jenkins时的过程中得注意，在最新版本，也就是2.361.1这个版本中，jenkins的默认配置是jenkins用户（jenkins在安装的时候会自动创建一个名叫jenkins的用户），这会导致在执行shell脚本命令，或者安装某些插件时，没有权限，jenkins的配置文件所在地址&#x2F;etc&#x2F;default&#x2F;jenkins，
+
+Jenkins2.361.1的版本（截止2022.10.14最新的版本）
+12JENKINS_USER=$NAMEJENKINS_GROUP=$NAME
+
+Jenkins2.346.1的版本
+12JENKINS_USER=rootJENKINS_GROUP=root
+
+2.346.1具体的配置信息如下：
+12345678910111213141516 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/10/14/Harbor%E5%AE%89%E8%A3%85/" title="Harbor安装"><img class="post_bg" src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Harbor安装"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/14/Harbor%E5%AE%89%E8%A3%85/" title="Harbor安装">Harbor安装</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-14T06:11:01.000Z" title="发表于 2022-10-14 14:11:01">2022-10-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%89%E8%A3%85/">安装</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Harbor/">Harbor</a></span></div><div class="content">Harbor安装
+
+
+序号
+环境准备
+版本
+
+
+
+1
+Ubantu
+20.04_server
+
+
+2
+docker
+最新
+
+
+3
+Docker-compose
+最新
+
+
+
+harbor项目地址
+
+
+
+下载harbor-online-install-v2.6.1.tgz，这个会在安装的时候从公网上下载一些必要的工具
+如果使用的是harbor-offline-install-v2.6.1.tgz，那么建议提前将一些harbor集成的工具准备好，不然可能会安装失败
+解压harbor-online-install-v2.6.1.tgz
+1tar -zxvf harbor-online-install-v2.6.1.tgz
+
+harbor默认工作方式是http，但是这只能在页面访问，默认harbor推送拉取镜像时走的是https，所以需要配置下https，一下是默认用ip地址去配置的
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/10/14/Docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E5%AE%89%E8%A3%85/" title="Docker私有仓库安装"><img class="post_bg" src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Docker私有仓库安装"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/14/Docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E5%AE%89%E8%A3%85/" title="Docker私有仓库安装">Docker私有仓库安装</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-14T05:21:01.000Z" title="发表于 2022-10-14 13:21:01">2022-10-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%89%E8%A3%85/">安装</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/docker/">docker</a></span></div><div class="content">Docker私有仓库安装
+注意：如果使用ubantu安装的docker，这个默认是通过snap安装的，它安装的权限只能控制当前用户的目录创建文件夹，例如：如果是root安装的docker，那么它只能在&#x2F;root这个目录下创建文件夹，不能操纵&#x2F;下的其他目录
+
+
+环境准备
+
+
+
+序号
+环境准备
+版本
+
+
+
+1
+Ubantu
+20.04_server
+
+
+2
+Docker
+最新的
+
+
+3
+registry
+最新的
+
+
+
+docker安装
+卸载旧版本
+1apt-get remove docker docker-engine docker.io containerd runc
+
+安装前提依赖
+12apt updateapt-get install ca-certificates curl gnupg lsb-release
+
+安装GPG证书
+1curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
+
+写入软件源信息
+1add-apt-repository &quo ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/07/19/eml%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/" title="eml文件解析"><img class="post_bg" src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="eml文件解析"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/07/19/eml%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/" title="eml文件解析">eml文件解析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-07-19T01:22:01.000Z" title="发表于 2022-07-19 09:22:01">2022-07-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/mysql/">mysql</a></span></div><div class="content">eml文件解析eml文件要使用邮箱类的工具软件才能打开，可以用微软的outlook打开
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465# -*- coding: utf-8 -*-from flanker import mimefrom datetime import datetimedef ParseEml(raw_email, path):    with open(raw_email, &#x27;rb&#x27;) as fhdl:        raw_email = fhdl.read()        eml = mime.from_string(raw_email)        # 主题        subjece = eml.subject        # 获取发信人地址及昵称        eml_header_from = eml.headers.get(&#x27 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2021/11/20/Linux%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/" title="Linux命令记录"><img class="post_bg" src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux命令记录"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/11/20/Linux%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/" title="Linux命令记录">Linux命令记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-11-20T04:31:01.000Z" title="发表于 2021-11-20 12:31:01">2021-11-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/linux/">linux</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/linux/">linux</a></span></div><div class="content">Linux命令记录基本操作
+Linux关机,重启
+12345# 关机shutdown -h now# 重启shutdown -r now
+
+
+查看系统,CPU信息
+12345678910111213141516171819202122# 查看系统内核信息uname -a# 查看系统内核版本cat /proc/version# 查看当前用户环境变量envcat /proc/cpuinfo# 查看有几个逻辑cpu, 包括cpu型号cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c# 查看有几颗cpu,每颗分别是几核cat /proc/cpuinfo | grep physical | uniq -c# 查看当前CPU运行在32bit还是64bit模式下, 如果是运行在32bit下也不代表CPU不支持64bitgetconf LONG_BIT# 结果大于0, 说明支持64bit计算. lm指long mode, 支持lm则是64bitcat /proc/cpuinfo | grep flags | grep &#x27; lm &#x2 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2021/11/20/Pritunl%E7%9A%84%E5%AE%89%E8%A3%85/" title="Pritunl安装"><img class="post_bg" src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Pritunl安装"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/11/20/Pritunl%E7%9A%84%E5%AE%89%E8%A3%85/" title="Pritunl安装">Pritunl安装</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-11-20T04:31:01.000Z" title="发表于 2021-11-20 12:31:01">2021-11-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AE%89%E8%A3%85/">安装</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Pritunl/">Pritunl</a></span></div><div class="content">Pritunl的安装
+环境准备
+
+
+
+序号
+环境准备
+版本
+
+
+
+1
+Ubantu
+20.04桌面版
+
+
+2
+Pritunl Server
+Pritunl Server最新的版本
+
+
+3
+Pritunl Client
+Pritunl Client最新的版本
+
+
+
+Pritunl Server安装
+1、通过apt在终端中运行以下命令来确保所有系统软件包都是最新的
+123sudo apt updatesudo apt upgradesudo apt install curl gnupg2 wget unzip
+
+2、在Ubuntu 20.04上安装Pritunl VPN Server
+我们将Pritunl存储库密钥和文件添加到Ubuntu系统
+12sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv E162F504A20CDF15827F718D4B7C549A058F8B6Bsudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2021/11/20/mysql%E5%AE%9E%E6%97%B6%E5%90%8C%E6%AD%A5%E8%87%B3es/" title="mysql实时同步至es"><img class="post_bg" src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="mysql实时同步至es"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/11/20/mysql%E5%AE%9E%E6%97%B6%E5%90%8C%E6%AD%A5%E8%87%B3es/" title="mysql实时同步至es">mysql实时同步至es</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-11-20T04:31:01.000Z" title="发表于 2021-11-20 12:31:01">2021-11-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/mysql/">mysql</a></span></div><div class="content">mysql实时同步至es目前是在本地进行测试同步的，由于在服务器上运行，占用的内存有点大，服务器上的配置与本地的配置稍微有所差别
+使用的工具版本：
+MySql8.0：通过 show variables like ‘%log_bin%’; 查看二进制日志功能是否开启，一般情况下是默认开启的
+
+Elasticsearch7.10.2由于log4j的问题导致用docker安装不了，可以换个版本
+
+
+
+
+工具
+端口
+版本
+问题
+
+
+
+mysql
+3308
+5.7
+
+
+
+Elasticsearch
+9200
+7.10.2
+7.17.0
+
+
+Kibanba
+5601
+7.10.2
+
+
+
+canal-deployer
+11111
+1.1.16
+
+
+
+canal-adapter
+8081
+1.1.16
+
+
+
+canal-admin
+8089
+1.1.16
+
+
+
+1.安装MySql通过docker安装mysql，pull下来mysql5.7版本
+docker pull mysql:5.7
+新建目录及配置文件
+123456cd /Users/mac/  mkdir mysql  cd mysql  mkd ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2021/10/17/Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="docker学习"><img class="post_bg" src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="docker学习"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/10/17/Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="docker学习">docker学习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-10-17T07:31:01.000Z" title="发表于 2021-10-17 15:31:01">2021-10-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/docker/">docker</a></span></div><div class="content">Docker学习笔记1.Docker简介Docker是一种运行于Linux和Windows上的软件，用于穿件、管理和编排容器。
+Docker在Github上开发的Moby开源项目的一部分。
+
+dockerClient客户端
+Docker Daemon守护进程
+Docker Image镜像
+DockerContainer容器
+
+2.Docker的优势
+轻量，秒级的快速启动速度
+
+简单，易用，活跃的社区&amp;nbsp;
+
+标准统一的打包&#x2F;部署&#x2F;运行方案
+
+镜像支持增量分发，易于部署&amp;nbsp;
+
+易于构建，良好的REST API，也很适合自动化测试和持续集成
+
+性能，尤其是内存和IO的开销
+
+
+3.三要素
+镜像（image）
+
+镜像&#x2F;容器
+镜像就是模板，容器就是镜像的一个实例，例如：
+12345Person p1 = new Person()  Person p2 = new Person()  Person p3 = new Person()  //Person都来自同一个对象，p1、p2、p3就是3个不同的实例  //就是一个容器，即镜像就是一 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2021/10/17/Vue%E5%AD%A6%E4%B9%A0/" title="Vue学习"><img class="post_bg" src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue学习"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/10/17/Vue%E5%AD%A6%E4%B9%A0/" title="Vue学习">Vue学习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-10-17T07:31:01.000Z" title="发表于 2021-10-17 15:31:01">2021-10-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/vue/">vue</a></span></div><div class="content">Vue学习1.Vue是什么？一套用于构建用户界面的渐进式JavaScript框架，vue可以自底向上逐层应用。
+简单应用：只需一个轻量小巧的核心库
+复杂应用：可以引用各式各样的Vue插件
+2.Vue特点
+采用组件化模式，提高代码复用率、且让代码更好维护。
+
+声明式编码，让编码人员无需直接操作DOM，提高开发效率。&amp;nbsp;
+
+使用虚拟DOM+优秀的Diff算法，尽量服用Dom节点。
+
+
+3.学习Vue3.1初识Vue
+想让Vue工作，就必须创建一个vue实例，且要传入一个配置对象。
+
+root容器里的代码依然符合html规范，只不过混入了一些特殊的Vue语法&amp;nbsp;
+
+root容器里的代码被称为【Vue模板】
+
+Vue实例和容器是一一对应的&amp;nbsp;
+
+真实开发中只有一个Vue实例，并且会配合着组件一起使用
+
+中的xxx要写进js表达式，且xxx可以自动读取到data中的所有属性&nbsp;
+
+一旦data中的数据发生改变，那么页面中用到该数据的地方也会自动更新
+
+注意区分：1.js表达式 和 js代码（语句）
+
+表达式：一个表达式会产生一个值，可以放在 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2021/10/17/%E7%88%AC%E8%99%AB%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/" title="爬虫的简单介绍"><img class="post_bg" src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="爬虫的简单介绍"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/10/17/%E7%88%AC%E8%99%AB%E7%9A%84%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/" title="爬虫的简单介绍">爬虫的简单介绍</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-10-17T07:31:01.000Z" title="发表于 2021-10-17 15:31:01">2021-10-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E7%88%AC%E8%99%AB/">爬虫</a></span></div><div class="content">爬虫的简单介绍场景对于爬取数据来说，有在不同的场景下爬取数据。绝大多数的情况下，要么是网页，要么是app。这里就简单的介绍一下这两个类别吧。
+分享一个爬虫案例平台，可以上去测试各种各样的爬虫： https://scrape.center
+java爬虫的一个样例，可以瞅瞅： https://juejin.cn/post/6844904064736559117
+
+网页爬取
+
+服务端渲染
+
+客户端渲染
+
+
+
+App爬取
+
+普通接口
+
+加密参数接口
+
+加密内容接口
+
+非常规协议接口
+
+
+
+
+爬取——网页爬取服务端渲染的意思就是页面的结果是由服务器渲染后返回的，有效信息包含在请求的HTML页面里面，比如猫眼电影这个站点。
+客户端渲染的意思就是页面的主要内容是由JavaScript渲染而成，真实的数据是通过Ajax接口的形式获取的，比如淘宝、微博等等站点。
+下图是一个电影网站的榜单数据，这是直接在html页面中渲染出来的：
+
+附上源代码：
+12345678910111213141516171819202122232425262728293031323334import requests  from ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">shully</div><div class="author-info__description">好好学习，天天向上</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Shunlly" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/330289953@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/jenkins%E5%AE%89%E8%A3%85/" title="jenkins安装"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jenkins安装"/></a><div class="content"><a class="title" href="/2022/10/14/jenkins%E5%AE%89%E8%A3%85/" title="jenkins安装">jenkins安装</a><time datetime="2022-10-14T06:21:11.000Z" title="发表于 2022-10-14 14:21:11">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/Harbor%E5%AE%89%E8%A3%85/" title="Harbor安装"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Harbor安装"/></a><div class="content"><a class="title" href="/2022/10/14/Harbor%E5%AE%89%E8%A3%85/" title="Harbor安装">Harbor安装</a><time datetime="2022-10-14T06:11:01.000Z" title="发表于 2022-10-14 14:11:01">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/Docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E5%AE%89%E8%A3%85/" title="Docker私有仓库安装"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Docker私有仓库安装"/></a><div class="content"><a class="title" href="/2022/10/14/Docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E5%AE%89%E8%A3%85/" title="Docker私有仓库安装">Docker私有仓库安装</a><time datetime="2022-10-14T05:21:01.000Z" title="发表于 2022-10-14 13:21:01">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/19/eml%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/" title="eml文件解析"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="eml文件解析"/></a><div class="content"><a class="title" href="/2022/07/19/eml%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/" title="eml文件解析">eml文件解析</a><time datetime="2022-07-19T01:22:01.000Z" title="发表于 2022-07-19 09:22:01">2022-07-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/20/Linux%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/" title="Linux命令记录"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux命令记录"/></a><div class="content"><a class="title" href="/2021/11/20/Linux%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/" title="Linux命令记录">Linux命令记录</a><time datetime="2021-11-20T04:31:01.000Z" title="发表于 2021-11-20 12:31:01">2021-11-20</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/linux/"><span class="card-category-list-name">linux</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">学习</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AE%89%E8%A3%85/"><span class="card-category-list-name">安装</span><span class="card-category-list-count">4</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Harbor/" style="font-size: 1.1em; color: #999">Harbor</a> <a href="/tags/Pritunl/" style="font-size: 1.1em; color: #999">Pritunl</a> <a href="/tags/docker/" style="font-size: 1.5em; color: #99a9bf">docker</a> <a href="/tags/jenkins/" style="font-size: 1.1em; color: #999">jenkins</a> <a href="/tags/linux/" style="font-size: 1.1em; color: #999">linux</a> <a href="/tags/mysql/" style="font-size: 1.5em; color: #99a9bf">mysql</a> <a href="/tags/vue/" style="font-size: 1.1em; color: #999">vue</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 1.1em; color: #999">爬虫</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">十月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/07/"><span class="card-archive-list-date">七月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">十一月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">十月 2021</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">10</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-04-04T02:08:43.963Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By shully</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,461 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>docker学习 | ShullyBlog</title><meta name="keywords" content="docker"><meta name="author" content="shully"><meta name="copyright" content="shully"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="docker的学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker学习">
+<meta property="og:url" content="http://example.com/2021/10/17/Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="ShullyBlog">
+<meta property="og:description" content="docker的学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg">
+<meta property="article:published_time" content="2021-10-17T07:31:01.000Z">
+<meta property="article:modified_time" content="2022-10-09T08:57:29.160Z">
+<meta property="article:author" content="shully">
+<meta property="article:tag" content="docker">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg"><link rel="shortcut icon" href="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F505112fe57b746e8a593a0f375e0ea01.jpg"><link rel="canonical" href="http://example.com/2021/10/17/Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'docker学习',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-09 16:57:29'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">ShullyBlog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">docker学习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-10-17T07:31:01.000Z" title="发表于 2021-10-17 15:31:01">2021-10-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-09T08:57:29.160Z" title="更新于 2022-10-09 16:57:29">2022-10-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="docker学习"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Docker学习笔记"><a href="#Docker学习笔记" class="headerlink" title="Docker学习笔记"></a>Docker学习笔记</h1><h2 id="1-Docker简介"><a href="#1-Docker简介" class="headerlink" title="1.Docker简介"></a>1.Docker简介</h2><p>Docker是一种运行于Linux和Windows上的软件，用于穿件、管理和编排容器。</p>
+<p>Docker在Github上开发的Moby开源项目的一部分。</p>
+<p><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora/1635746950373-4639ad99-25d4-446f-8ba2-64d1b4caa425.png" alt="image.png"></p>
+<p>dockerClient客户端</p>
+<p>Docker Daemon守护进程</p>
+<p>Docker Image镜像</p>
+<p>DockerContainer容器</p>
+<p><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora/1635747181750-953109a2-9823-4591-b8c7-a713fb3e1eeb.png" alt="image.png"></p>
+<h2 id="2-Docker的优势"><a href="#2-Docker的优势" class="headerlink" title="2.Docker的优势"></a>2.Docker的优势</h2><ul>
+<li><p>轻量，秒级的快速启动速度</p>
+</li>
+<li><p>简单，易用，活跃的社区&amp;nbsp;</p>
+</li>
+<li><p>标准统一的打包&#x2F;部署&#x2F;运行方案</p>
+</li>
+<li><p>镜像支持增量分发，易于部署&amp;nbsp;</p>
+</li>
+<li><p>易于构建，良好的REST API，也很适合自动化测试和持续集成</p>
+</li>
+<li><p>性能，尤其是内存和IO的开销</p>
+</li>
+</ul>
+<h2 id="3-三要素"><a href="#3-三要素" class="headerlink" title="3.三要素"></a>3.三要素</h2><ul>
+<li>镜像（image）</li>
+</ul>
+<p>镜像&#x2F;容器</p>
+<p>镜像就是模板，容器就是镜像的一个实例，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Person</span> <span class="variable">p1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>()  </span><br><span class="line"><span class="type">Person</span> <span class="variable">p2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>()  </span><br><span class="line"><span class="type">Person</span> <span class="variable">p3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>()  </span><br><span class="line"><span class="comment">//Person都来自同一个对象，p1、p2、p3就是3个不同的实例  </span></span><br><span class="line"><span class="comment">//就是一个容器，即镜像就是一个类，容器就是一个一个对象</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>容器（container）</li>
+</ul>
+<p>Docker利用容器独立运行的一个或一组应用。容器是用镜像创建的运行实例，可以把容器看成是一个简易版的Linux环境</p>
+<ul>
+<li>仓库（respository）</li>
+</ul>
+<p>仓库（Respository）是集中存放镜像文件的场所，仓库和仓库注册服务器（Registry）是有区别的。仓库注册服务器上往往存放着多个仓库，每个仓库中又包含了多个 镜像，每个镜像有不同的标签（tag）。</p>
+<p>仓库分为公开仓库（public）和私有仓库（Private）两种形式。最大的公开仓库是Docker Hub（<a target="_blank" rel="noopener" href="https://hub.docker.com/%EF%BC%89">https://hub.docker.com/）</a></p>
+<h2 id="4-Docker安装"><a href="#4-Docker安装" class="headerlink" title="4.Docker安装"></a>4.Docker安装</h2><ul>
+<li>查看自己的服务器上的系统版本</li>
+</ul>
+<p>uname -r</p>
+<p>cat &#x2F;etc&#x2F;redhat-release</p>
+<ul>
+<li>根据服务器的系统不同，版本不同，安装过程会有所区别</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos/#install-using-the-repository">**</a><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos//#install-using-the-repository">https://docs.docker.com/engine/install/centos/\#install-using-the-repository</a></p>
+<p>这是官方文档的安装步骤。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 卸载旧版本  </span></span><br><span class="line">sudo yum remove docker \</span><br><span class="line">docker-client \  </span><br><span class="line">docker-client-latest \  </span><br><span class="line">docker-common \  </span><br><span class="line">docker-latest \  </span><br><span class="line">docker-latest-logrotate \  </span><br><span class="line">docker-logrotate \  </span><br><span class="line">docker-engine  </span><br><span class="line"><span class="comment">#设置存储库  </span></span><br><span class="line"><span class="comment">#安装yum-utils包（提供yum-config-manager 实用程序）  </span></span><br><span class="line"><span class="comment">#并设置稳定存储库  </span></span><br><span class="line">sudo yum install -y yum-utils  </span><br><span class="line">sudo yum-config-manager \  </span><br><span class="line">--add-repo \  </span><br><span class="line">https://download.docker.com/linux/centos/docker-ce.repo  </span><br><span class="line"><span class="comment">#可选：启用夜间或测试存储库  </span></span><br><span class="line"><span class="comment">#开启  </span></span><br><span class="line">sudo yum-config-manager --<span class="built_in">enable</span> docker-ce-nightly  </span><br><span class="line"><span class="comment">#要启用测试通道，请运行以下命令：  </span></span><br><span class="line">sudo yum-config-manager --<span class="built_in">enable</span> docker-ce-test  </span><br><span class="line"><span class="comment">#关闭  </span></span><br><span class="line">sudo yum-config-manager --<span class="built_in">disable</span> docker-ce-nightly  </span><br><span class="line"><span class="comment">#安装docker引擎  </span></span><br><span class="line">sudo yum install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>可以配置阿里云的镜像仓库。具体的可以参考<a target="_blank" rel="noopener" href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors"><em>https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors</em></a></li>
+</ul>
+<h2 id="5-Docker命令"><a href="#5-Docker命令" class="headerlink" title="5.Docker命令"></a>5.Docker命令</h2><ul>
+<li><p>帮助命令</p>
+<ul>
+<li><p>docker version</p>
+</li>
+<li><p>docker info&amp;nbsp;</p>
+</li>
+<li><p>docker –help&amp;nbsp;</p>
+</li>
+</ul>
+</li>
+<li><p>镜像命令</p>
+<ul>
+<li><p>docker images 查看本地的镜像</p>
+<ul>
+<li><p>docker images -a 列出本地所有的镜像</p>
+</li>
+<li><p>docker images -q 只显示镜像的摘要信息&amp;nbsp;</p>
+</li>
+<li><p>docker images –digests 显示镜像的摘要信息</p>
+</li>
+<li><p>docker images –no-trunc 显示完整的镜像信息&amp;nbsp;</p>
+</li>
+</ul>
+</li>
+<li><p>docker search xxx 搜索相应的镜像(xxx为镜像名字)</p>
+<ul>
+<li><p>docker search xxx -f stars&#x3D;30 搜索星星数大于30的镜像</p>
+</li>
+<li><p>docker search xxx -f stars&#x3D;30 –no-trunc 显示详细信息&amp;nbsp;</p>
+</li>
+</ul>
+</li>
+<li><p>docker pull xxx 下载镜像</p>
+</li>
+<li><p>docker rmi xxx 删除镜像</p>
+<ul>
+<li><p>docker rmi -f xxx 强制删除</p>
+</li>
+<li><p>docker rmi -f xxx[:tag] xxx[:tag] 多个删除&amp;nbsp;</p>
+</li>
+<li><p>docker rmi -f $(docker images -q) 全部删除&amp;nbsp;</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>容器命令（有镜像才能创建容器）</p>
+<ul>
+<li><p>docker pull centos 下载centos镜像</p>
+</li>
+<li><p>docker run [options] xxx 新建并运行xxx镜像</p>
+<ul>
+<li><p>options: –name（容器新名字，为容器指定一个名称）</p>
+</li>
+<li><p>options: -d（后台运行容器，并返回容器ID，也即启动守护式容器）&amp;nbsp;</p>
+</li>
+<li><p>options: -i（以交互模式运行容器，通常与-t同时使用）</p>
+</li>
+<li><p>options: -t（为容器重新分配一个伪输入终端，通常与-i同时使用）&amp;nbsp;</p>
+</li>
+<li><p>options: -P（随机映射端口）</p>
+</li>
+<li><p>options: -p（指定端口映射，有以下四种格式）</p>
+<ul>
+<li><p>ip:hostPort:containerPort</p>
+</li>
+<li><p>ip::containerPort&amp;nbsp;</p>
+</li>
+<li><p>hostPort:containerPort</p>
+</li>
+<li><p>containerPort&amp;nbsp;</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>docker ps [options] 查看正在运行的镜像</p>
+<ul>
+<li><p>options: -a（列出当前所有正在运行的容器+历史上运行过的）</p>
+</li>
+<li><p>options: -l（显示最近创建的容器）&amp;nbsp;</p>
+</li>
+<li><p>options: -n（显示最近n个创建的容器）</p>
+</li>
+<li><p>options: -q（静默模式，只显示容器编号）&amp;nbsp;</p>
+</li>
+<li><p>options: –no-trunc（不截断输出）&amp;nbsp;</p>
+</li>
+</ul>
+</li>
+<li><p>exit 退出并关闭容器</p>
+</li>
+<li><p>ctrl+p+q 退出但不关闭容器(windows)&amp;nbsp;</p>
+</li>
+<li><p>docker start 容器id 启动容器</p>
+</li>
+<li><p>docker restart 容器id 重启容器&amp;nbsp;</p>
+</li>
+<li><p>docker stop 容器id 停止容器</p>
+</li>
+<li><p>docker kill 容器id 强制停止&amp;nbsp;</p>
+</li>
+<li><p>docker rm 容器id 删除容器</p>
+<ul>
+<li><p>docker rm -f 容器id 强制删除</p>
+</li>
+<li><p>docker rm -f $(docker ps -a -q) 多个删除&amp;nbsp;</p>
+</li>
+<li><p>docker ps -a -q | xargs docker rm 多个删除&amp;nbsp;</p>
+</li>
+</ul>
+</li>
+<li><p>docker run -d centos 以后台进程的模式启动容器，这样做，导致容器前台没有运行应用，这样启动后，会立即自杀，因为容器觉得没有事情可做。解决方式：将要运行的程序以前台进程的形式运行。</p>
+</li>
+<li><p>docker logs -f -t –tail 容器id 查看容器日志</p>
+<ul>
+<li><p>-t 是加入时间戳</p>
+</li>
+<li><p>-f 跟随最新的日志大新&amp;nbsp;</p>
+</li>
+<li><p>–tail 数字，显示最后多少条&amp;nbsp;</p>
+</li>
+</ul>
+</li>
+<li><p>docker top 容器id 查看容器内运行的进程</p>
+</li>
+<li><p>docker inspect 容器id 查看容器内部细节（json字符串的形式）&amp;nbsp;</p>
+</li>
+<li><p>docker exec -it 容器id bashShell</p>
+<ul>
+<li>docker exec -it 容器id &#x2F;bin&#x2F;bash 直接进入目录（默认为&#x2F;bin&#x2F;bash）&amp;nbsp;</li>
+</ul>
+</li>
+<li><p>dcoker attach 容器id 重新进入容器</p>
+</li>
+<li><p>docker cp 容器id: &#x2F;tmp&#x2F;yum.log &#x2F;root 拷贝文件到root目录下</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-Docker镜像"><a href="#6-Docker镜像" class="headerlink" title="6.Docker镜像"></a>6.Docker镜像</h2><ul>
+<li><p>docker 的镜像实际上是由一层一层的文件系统组成，这种层级的文件系统UnionFS。</p>
+</li>
+<li><p><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora/1636004250376-b17d34f7-0313-4c04-b98e-3abee09a4772.png" alt="image.png"></p>
+</li>
+<li><p>docker Commit的操作</p>
+</li>
+</ul>
+<h2 id="Docker容器数据卷"><a href="#Docker容器数据卷" class="headerlink" title="Docker容器数据卷"></a>Docker容器数据卷</h2><ul>
+<li><p>将运用与运行的环境打包形成容器运行，运行可以伴随着容器，但是我们可以对数据的要求希望是持久化的</p>
+</li>
+<li><p>容器之间是希望有可能共享数据&amp;nbsp;</p>
+</li>
+<li><p>Docker容器产生的数据，如果不通过docker commit生成新的镜像，使得数据做为镜像的一部分保存下来，那么当容器删除后，数据自然也就没有了。</p>
+</li>
+<li><p>为了能保存数据在docker中我们使用卷&amp;nbsp;</p>
+</li>
+<li><p>命令添加容器卷</p>
+<ul>
+<li><p>docker run -it -v &#x2F;宿主机绝对路径目录:&#x2F;容器内目录 镜像名</p>
+</li>
+<li><p>docker run -it -v &#x2F;宿主机绝对路径目录:&#x2F;容器内目录 ro 镜像名</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="DockerFile解析"><a href="#DockerFile解析" class="headerlink" title="DockerFile解析"></a>DockerFile解析</h2><ul>
+<li><p>DockerFile是用来构建Docker镜像的构建文件，有由一系列命令和参数构成的脚本</p>
+</li>
+<li><p>构建三步骤：</p>
+<ul>
+<li><p>编写Dockerfile文件</p>
+</li>
+<li><p>dockerfile build&amp;nbsp;</p>
+</li>
+<li><p>docker run&amp;nbsp;</p>
+</li>
+</ul>
+</li>
+<li><p>Dcokerfile内容基础知识</p>
+<ul>
+<li><p>1.每条保留字指令都必须为大写字母且后面要跟随至少一个参数</p>
+</li>
+<li><p>2.指令按照从上到下，顺序执行&amp;nbsp;</p>
+</li>
+<li><p>3.#表示注释</p>
+</li>
+<li><p>4.每条指令都会创建一个新的镜像层。并对镜像进行提交&amp;nbsp;</p>
+</li>
+</ul>
+</li>
+<li><p>Docker执行Dockerfile的大致流程</p>
+<ul>
+<li><p>（1）docker从基础镜像运行一个容器</p>
+</li>
+<li><p>（2）执行一条指令并对容器作出更改&amp;nbsp;</p>
+</li>
+<li><p>（3）执行类似docker commit的操作提交一个新的镜像层</p>
+</li>
+<li><p>（4）docker再基于刚提交的镜像运行一个新容器&amp;nbsp;</p>
+</li>
+<li><p>（5）执行dockerfile中的下一条指令直到所有指令都执行完成&amp;nbsp;</p>
+</li>
+</ul>
+</li>
+<li><p>Dockerfile体系结构（保留字指令）</p>
+<ul>
+<li><p>FROM|基础镜像，当前镜像是基于哪个镜像的&amp;nbsp;</p>
+</li>
+<li><p>MAINTAINER |镜像维护者的姓名和邮箱地址</p>
+</li>
+<li><p>RUN 容器构建时需要运行的命令&amp;nbsp;</p>
+</li>
+<li><p>EXPOSE 当前容器对外暴露出的端口</p>
+</li>
+<li><p>WORKDIR 指定在创建容器之后，终端默认登陆的进来工作目录，一个落脚点&amp;nbsp;</p>
+</li>
+<li><p>ENV 用来在构建镜像过程中设置环境变量</p>
+</li>
+<li><p>ADD 将宿主机目录下的文件拷贝进镜像且ADD命令会自动处理URL和解压tar压缩包&amp;nbsp;</p>
+</li>
+<li><p>COPY 类似ADD，拷贝文件和目录到镜像中。</p>
+</li>
+<li><p>VOLUME 容器数据卷，用于数据保存和持久化工作&amp;nbsp;</p>
+</li>
+<li><p>CMD 指定容器启动时要运行的命令，最后一个命令会顶替之前的</p>
+</li>
+<li><p>ENTRYPOINT 指定容器启动时要运行的命令，在之前的命令执行后追加&amp;nbsp;</p>
+</li>
+<li><p>ONBUILD 当构建一个被继承的DockerFile时运行命令，父镜像子在被子继承后父镜像的onbuild被触发&amp;nbsp;</p>
+</li>
+</ul>
+</li>
+<li><p>案例</p>
+</li>
+</ul>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> cetos  </span><br><span class="line"><span class="keyword">MAINTAINER</span> csh&amp;lt;<span class="number">330289953</span>@qq&amp;gt;com&amp;gt;  </span><br><span class="line"></span><br><span class="line"><span class="keyword">ENV</span> MYPATH /usr/local  </span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> \<span class="variable">$MYPATH</span>  </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> yum -y install vim  </span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> yum -y install net-tools  </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">80</span>  </span><br><span class="line"></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> <span class="built_in">echo</span> \<span class="variable">$MYPATH</span>  </span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> <span class="built_in">echo</span> <span class="string">&quot;success------------ok&quot;</span>  </span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> /bin/bash</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="MySql安装"><a href="#MySql安装" class="headerlink" title="MySql安装"></a>MySql安装</h2><p>docker pull mysql:5.7下载5.7版本的mysql</p>
+<p>运行：</p>
+<p>docker run -p 3306:3306 –name mysql57 -v &#x2F;opt&#x2F;mysql&#x2F;conf:&#x2F;etc&#x2F;mysql&#x2F;conf.d -v &#x2F;opt&#x2F;mysql&#x2F;logs:&#x2F;logs -v &#x2F;opt&#x2F;mysql&#x2F;data:&#x2F;var&#x2F;lib&#x2F;mysql -e MYSQL_ROOT_PASSWORD&#x3D;123456 -d mysql:5.7</p>
+<h2 id="Redis安装"><a href="#Redis安装" class="headerlink" title="Redis安装"></a>Redis安装</h2><p>docker pull redis 将redis从docker上拉下来</p>
+<p>运行：</p>
+<p>docker run -p 6379:6379 -v &#x2F;opt&#x2F;myredis&#x2F;data:&#x2F;data -v &#x2F;opt&#x2F;myredis&#x2F;conf&#x2F;redis.conf:&#x2F;usr&#x2F;local&#x2F;etc&#x2F;redis&#x2F;redis.conf -d redis redis-server &#x2F;usr&#x2F;local&#x2F;etc&#x2F;redis&#x2F;redis.conf –appendonly yes</p>
+<h2 id="案例（DockerFile）"><a href="#案例（DockerFile）" class="headerlink" title="案例（DockerFile）"></a>案例（DockerFile）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">FROM centos  </span><br><span class="line">MAINTAINER csh&amp;lt;a330289953@gmail.com&amp;gt;  </span><br><span class="line"># 把宿主机当前上下文的c.text拷贝到容器/usr/local路径下  </span><br><span class="line">COPY c.txt /usr/local/cincontainer.txt  </span><br><span class="line"># 把java与tomcat添加到容器中  </span><br><span class="line">ADD jdk-8u171-linux-x64.tar.gz /usr/local  </span><br><span class="line">ADD apache-tomcat-9.0.8.tar.gz /usr.local  </span><br><span class="line"># 安装vim编辑器  </span><br><span class="line">RUN yum -y install vim  </span><br><span class="line"># 设置工作访问时候的WORKDIR路径，登录落脚点  </span><br><span class="line">ENV MYPATH /usr/local  </span><br><span class="line">WORKDIR $MYPATH  </span><br><span class="line"># 配置java与tomcat环境变量  </span><br><span class="line">ENV JAVA_HOME /usr/local/jdk1.8.0_171  </span><br><span class="line">ENV CLASSPATH $JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar  </span><br><span class="line">ENV CATALINA_HOME /usr/local/apache-tomcat-9.0.8  </span><br><span class="line">ENV CATALINA_BASE /usr/local/apache-tomcat-9.0.8  </span><br><span class="line">ENV PATH $PAHT:$JAVA_HOME/bin:$CATALINA_HOME/lib:$CATALINA_HOME/bin  </span><br><span class="line"># 容器运行时监听的端口  </span><br><span class="line">EXPOSE 8080  </span><br><span class="line"># 启动时运行tomcat  </span><br><span class="line"># ENTRYPOIN [&quot;usr/local/apache-tomcat-9.0.8/bin/startup.sh&quot;]  </span><br><span class="line"># CMD [&quot;/usr/local/apache-tomcat-9.0.8/bin/catalina.hs&quot;,&quot;run&quot;]  </span><br><span class="line">CMD /usr/lcoal/apache-tomcat-9.0.8/bin/startup.sh &amp;&amp; tail -F /usr/local/apache-tomcat-9.0.8/bin/logs/catailna.out</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">docker run \\</span><br><span class="line"></span><br><span class="line">-d \</span><br><span class="line"></span><br><span class="line">-p 6379:6379 \\</span><br><span class="line"></span><br><span class="line">--restart unless-stopped \\</span><br><span class="line"></span><br><span class="line">-v /home/memect/project/tools/mydata/redis/data:/data \\</span><br><span class="line"></span><br><span class="line">-v /home/memect/project/tools/mydata/redis/conf/redis.conf:/etc/redis/redis.conf \\</span><br><span class="line"></span><br><span class="line">redis-server /etc/redis/redis.conf \\</span><br><span class="line"></span><br><span class="line">redis</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 3306:3306 --name mysql8 -v /home/chenshuhang/tools/mysql/conf/my.cnf:/etc/mysql/my.cnf -v /home/chenshuhang/tools/mysql/conf:/etc/mysql/conf.d -v /home/chenshuhang/tools/mysql/logs:/logs -v /home/chenshuhang/tools/mysql/data:/var/lib/mysql -e MYSQL\_ROOT\_PASSWORD=123456 -d mysql:8.0</span><br><span class="line"></span><br><span class="line">docker run --name mysql -p 3306:3306 -e MYSQL\_ROOT\_PASSWORD=123456 -d mysql:8.0</span><br><span class="line"></span><br><span class="line">ALTER USER <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED BY <span class="string">&#x27;123456&#x27;</span>;</span><br><span class="line"></span><br><span class="line">docker run -p 8848:8848 -v /home/memect/project/login\_util:/code login\_util</span><br><span class="line"></span><br><span class="line">sudo docker run -p 6379:6379 --name redis -v /home/memect/project/tools/myredis/conf/redis.conf:/etc/redis/redis.conf -v /home/memect/project/tools/myredis/data:/data -d redis redis-server /etc/redis/redis.conf --appendonly <span class="built_in">yes</span></span><br></pre></td></tr></table></figure>
+
+<p>设置密码</p>
+<p>config set requirepass 123456</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \\</span><br><span class="line"></span><br><span class="line">--name=kibana \\</span><br><span class="line"></span><br><span class="line">--restart=always \\</span><br><span class="line"></span><br><span class="line">-p 5601:5601 \\</span><br><span class="line"></span><br><span class="line">-v /opt/tools/kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml \\</span><br><span class="line"></span><br><span class="line">kibana:7.16.2</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 6379:6379 --name redis -v /home/memect/tools/redis/redis.conf:/etc/redis/redis.conf -v /home/memect/tools/redis/data:/data -d redis redis-server /etc/redis/redis.conf --appendonly yes</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 3308:3306 --name mysql57 -v /Users/mac/canal/mysql/conf/my.cnf:/etc/mysql/my.cnf -v /Users/mac/canal/mysql/logs:/logs -v /Users/mac/canal/mysql/data:/var/lib/mysql -e MYSQL\_ROOT\_PASSWORD=123456 -d mysql:5.7</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">shully</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/10/17/Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">http://example.com/2021/10/17/Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">ShullyBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/docker/">docker</a></div><div class="post_share"><div class="social-share" data-image="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/11/20/mysql%E5%AE%9E%E6%97%B6%E5%90%8C%E6%AD%A5%E8%87%B3es/"><img class="prev-cover" src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">mysql实时同步至es</div></div></a></div><div class="next-post pull-right"><a href="/2021/10/17/Vue%E5%AD%A6%E4%B9%A0/"><img class="next-cover" src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Vue学习</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/10/14/Docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E5%AE%89%E8%A3%85/" title="Docker私有仓库安装"><img class="cover" src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-14</div><div class="title">Docker私有仓库安装</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">shully</div><div class="author-info__description">好好学习，天天向上</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Shunlly" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/330289953@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">Docker学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Docker%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">1.Docker简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Docker%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-number">1.2.</span> <span class="toc-text">2.Docker的优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="toc-number">1.3.</span> <span class="toc-text">3.三要素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Docker%E5%AE%89%E8%A3%85"><span class="toc-number">1.4.</span> <span class="toc-text">4.Docker安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Docker%E5%91%BD%E4%BB%A4"><span class="toc-number">1.5.</span> <span class="toc-text">5.Docker命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Docker%E9%95%9C%E5%83%8F"><span class="toc-number">1.6.</span> <span class="toc-text">6.Docker镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%8D%B7"><span class="toc-number">1.7.</span> <span class="toc-text">Docker容器数据卷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DockerFile%E8%A7%A3%E6%9E%90"><span class="toc-number">1.8.</span> <span class="toc-text">DockerFile解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySql%E5%AE%89%E8%A3%85"><span class="toc-number">1.9.</span> <span class="toc-text">MySql安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis%E5%AE%89%E8%A3%85"><span class="toc-number">1.10.</span> <span class="toc-text">Redis安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%EF%BC%88DockerFile%EF%BC%89"><span class="toc-number">1.11.</span> <span class="toc-text">案例（DockerFile）</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/jenkins%E5%AE%89%E8%A3%85/" title="jenkins安装"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jenkins安装"/></a><div class="content"><a class="title" href="/2022/10/14/jenkins%E5%AE%89%E8%A3%85/" title="jenkins安装">jenkins安装</a><time datetime="2022-10-14T06:21:11.000Z" title="发表于 2022-10-14 14:21:11">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/Harbor%E5%AE%89%E8%A3%85/" title="Harbor安装"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Harbor安装"/></a><div class="content"><a class="title" href="/2022/10/14/Harbor%E5%AE%89%E8%A3%85/" title="Harbor安装">Harbor安装</a><time datetime="2022-10-14T06:11:01.000Z" title="发表于 2022-10-14 14:11:01">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/Docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E5%AE%89%E8%A3%85/" title="Docker私有仓库安装"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Docker私有仓库安装"/></a><div class="content"><a class="title" href="/2022/10/14/Docker%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E5%AE%89%E8%A3%85/" title="Docker私有仓库安装">Docker私有仓库安装</a><time datetime="2022-10-14T05:21:01.000Z" title="发表于 2022-10-14 13:21:01">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/19/eml%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/" title="eml文件解析"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="eml文件解析"/></a><div class="content"><a class="title" href="/2022/07/19/eml%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/" title="eml文件解析">eml文件解析</a><time datetime="2022-07-19T01:22:01.000Z" title="发表于 2022-07-19 09:22:01">2022-07-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/20/Linux%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/" title="Linux命令记录"><img src="https://typora-1303886849.cos.ap-guangzhou.myqcloud.com/typora%2F4327c995d22931a33f4ae872ee8605a42d8dc974.jpg%40942w_531h_progressive.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux命令记录"/></a><div class="content"><a class="title" href="/2021/11/20/Linux%E5%91%BD%E4%BB%A4%E8%AE%B0%E5%BD%95/" title="Linux命令记录">Linux命令记录</a><time datetime="2021-11-20T04:31:01.000Z" title="发表于 2021-11-20 12:31:01">2021-11-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By shully</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
